@@ -21,9 +21,9 @@ if __name__ == "__main__":
     create_directory('images')
 
     #Load the pre-trained face cascade classifier
-    faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml') #prob here
+    faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml') 
 
-    #Open a connection to the default camera (camera index 0)
+    #Open a connection to the default camera
     cam = cv2.VideoCapture(0)
 
     cam.set(3, 640)
