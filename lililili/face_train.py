@@ -6,13 +6,6 @@ import os
 def getImagesAndLabels(path):
     """
     Load face images and corresponding labels from the given directory path.
-
-    Parameters: 
-        path(str): Directory path containing face images
-
-    Returns: 
-        list: List of face samples
-        list: list of corresponding labels
     """
     imagePaths = [os.path.join(path, f) for f in os.listdir(path)]
     faceSamples = []
@@ -41,12 +34,8 @@ def getImagesAndLabels(path):
 
     return faceSamples, ids
 
-# Rest of your main code remains the same
-
-
 if __name__ == "__main__":
 
-    # Directory path where the images are stored
     path = './images/'
     recognizer = cv2.face.LBPHFaceRecognizer_create()
     print("\n[INFO] Training...")
@@ -55,7 +44,6 @@ if __name__ == "__main__":
 
     faces, ids = getImagesAndLabels(path)
 
-    # Train the recognizer with the face samples and corresponding labels
     recognizer.train(faces, np.array(ids))
     recognizer.write('trainer.yml')
 
